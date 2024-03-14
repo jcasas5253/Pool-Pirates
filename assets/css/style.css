@@ -5,6 +5,24 @@ body {
     margin: 0;
     padding: 0;
     min-width: fit-content;
+    min-height: 100vh; /* Set minimum height for the body */
+    display: flex;
+    flex-direction: column;
+}
+
+.body-container {
+    margin: 30px;
+}
+
+.mascot-container {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.mascot-container:hover {
+    transform: translateY(-4px);
+    cursor: pointer;
 }
 
 .pirata-one-regular {
@@ -20,7 +38,9 @@ body {
 }
 
 .header {
-    background-color: #007bff;
+    background-image: url("../../assets/images/poolbg.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 15px;
     width: 100%;
     text-align: center;
@@ -28,11 +48,11 @@ body {
 }
 
 .nav {
-    padding: 60px;
+    padding: 30px;
 }
 
 a.nav-link {
-    color: black !important;
+    color: #fff !important;
     font-weight: 600 !important;
     margin-right: 20px;
     margin-left: 20px;
@@ -40,7 +60,7 @@ a.nav-link {
 }
 
 .nav-link:hover {
-    color: #007bff !important;
+    text-decoration: underline !important;
 }
 
 .bg-body-tertiary {
@@ -48,9 +68,34 @@ a.nav-link {
 }
 
 .btn-primary {
-    background-color: #007bff !important;
+    background-color: deepskyblue !important;
+    border-color: deepskyblue;
+}
+
+.btn-primary:hover {
+    border-color: deepskyblue;
+    transform: translateY(-4px);
 }
 
 .card {
     border: none !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) !important;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    cursor: pointer;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.footer {
+    /* Footer styles */
+    background-color: deepskyblue; /* Adjust background color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
 }
