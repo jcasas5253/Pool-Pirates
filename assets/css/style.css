@@ -91,6 +91,10 @@ a.nav-link {
     text-align: center;
 }
 
+.review-card .card {
+    height: 250px; /* Adjust height as needed */
+}
+
 .footer {
     /* Footer styles */
     background-color: deepskyblue; /* Adjust background color */
