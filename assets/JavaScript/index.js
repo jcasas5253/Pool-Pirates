@@ -27,12 +27,13 @@ const reviews = [
 ];
 
 const reviewContainer = document.querySelector(".reviews");
+const paginationContainer = document.createElement("div"); // Create pagination container
 
 function createReviewCard(review) {
     const card = document.createElement("div");
     card.classList.add("col", "mb-4", "review-card");
     card.innerHTML = `
-    <div class="card">
+    <div class="card cardjs">
       <div class="card-body">
         <h5 class="card-title">${review.name}</h5>
         <p class="card-text">${review.text}</p>
@@ -47,21 +48,70 @@ function createReviewCard(review) {
     return card;
 }
 
-function displayReviews(startIndex) {
+function displayReview(startIndex) {
     reviewContainer.innerHTML = ""; // Clear existing reviews
-    for (let i = startIndex; i < startIndex + 3; i++) {
-        if (i < reviews.length) {
-            const reviewCard = createReviewCard(reviews[i]);
-            reviewContainer.appendChild(reviewCard);
-        }
+    if (startIndex < reviews.length) {
+        const reviewCard = createReviewCard(reviews[startIndex]);
+        reviewContainer.appendChild(reviewCard);
     }
 }
 
-displayReviews(0); // Initially display first 3 reviews
+function createPaginationIndicators(numberOfReviews) {
+    paginationContainer.innerHTML = ""; // Clear existing indicators
+    for (let i = 0; i < numberOfReviews; i++) {
+        const indicator = document.createElement("span");
+        indicator.classList.add("pagination-indicator");
+        indicator.dataset.index = i;
+        paginationContainer.appendChild(indicator);
+    }
+    paginationContainer.querySelector(".pagination-indicator").classList.add("active"); // Set first indicator as active
+}
+
+createPaginationIndicators(reviews.length); // Create indicators on load
+reviewContainer.parentNode.insertBefore(paginationContainer, reviewContainer.nextSibling); // Add pagination container after reviews
+
+let currentReviewIndex = 0;
+
+function updatePagination(startIndex) {
+    const indicators = document.querySelectorAll(".pagination-indicator");
+    indicators.forEach((indicator) => indicator.classList.remove("active"));
+    indicators[startIndex].classList.add("active");
+}
+
+displayReview(currentReviewIndex);
+updatePagination(currentReviewIndex);
 
 setInterval(() => {
-    const currentStartIndex = parseInt(reviewContainer.dataset.startIndex) || 0;
-    const nextStartIndex = (currentStartIndex + 1) % reviews.length;
-    displayReviews(nextStartIndex);
-    reviewContainer.dataset.startIndex = nextStartIndex;
-}, 4000); // Change reviews every 4 seconds with a smooth transition
+    currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+    displayReview(currentReviewIndex);
+    updatePagination(currentReviewIndex);
+}, 4000); // Change reviews every 4 seconds
+
+// Add styles for pagination indicators (optional)
+const styles = document.createElement("style");
+styles.innerHTML = `
+  .pagination-indicator {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+  }
+  .pagination-indicator.active {
+    background-color: #007bff;
+  }
+`;
+document.head.appendChild(styles);
+
+// Event listener for pagination indicator clicks (optional)
+paginationContainer.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.classList.contains("pagination-indicator")) {
+        const newIndex = parseInt(target.dataset.index);
+        currentReviewIndex = newIndex;
+        displayReview(currentReviewIndex);
+        updatePagination(currentReviewIndex);
+    }
+});
