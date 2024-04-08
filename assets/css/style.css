@@ -4,7 +4,7 @@ body {
     font-style: normal;
     margin: 0;
     padding: 0;
-    min-width: fit-content;
+    min-width: 100vw;
     min-height: 100vh; /* Set minimum height for the body */
     display: flex;
     flex-direction: column;
