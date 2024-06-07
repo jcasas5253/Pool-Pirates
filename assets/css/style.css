@@ -194,4 +194,7 @@ a.nav-link {
         width: 100%;
         bottom: 0;
     }
+    iframe {
+        width: 100% !important;
+    }
 }
