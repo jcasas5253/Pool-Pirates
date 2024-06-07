@@ -6,7 +6,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Set minimum height for the body */
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -28,24 +28,7 @@ button {
 
 .body-container {
     margin: 30px;
-    margin-top: 100px;
-    flex: 1; /* Grow to fill remaining space */
-}
-
-.body-container1 {
-    margin: 30px;
-    margin-top: 100px;
     flex: 1;
-    /*overflow: auto;
-    margin: auto;
-    position: absolute;
-    top: 300px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    height: 50%;
-    flex: 1;*/ /* Grow to fill remaining space */
 }
 
 .flex {
@@ -58,6 +41,10 @@ button {
 
 .linky {
     margin-bottom: 50px;
+}
+
+.w100 {
+    width: 60%;
 }
 
 .mascot-container,
@@ -75,9 +62,9 @@ button {
         cursor: pointer;
     }
 
-    iframe:hover {
-        transform: translateY(-4px);
-    }
+iframe:hover {
+    transform: translateY(-4px);
+}
 
 .pirata-one-regular {
     font-family: "Pirata One", system-ui;
@@ -100,7 +87,7 @@ button {
     overflow: hidden;
 }
 
-.nav {
+.navbar {
     padding: 30px;
     background: none !important;
 }
@@ -176,13 +163,8 @@ a.nav-link {
     display: block !important;
 }
 
-/*.review-card .card {
-    height: 250px; 
-}*/
-
 .footer {
-    /* Footer styles */
-    background-color: deepskyblue; /* Adjust background color */
+    background-color: deepskyblue;
     color: #fff;
     padding: 20px;
     text-align: center;
