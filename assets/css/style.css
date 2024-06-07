@@ -4,26 +4,64 @@ body {
     font-style: normal;
     margin: 0;
     padding: 0;
-    min-width: 100vw;
-    min-height: 100vh; /* Set minimum height for the body */
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Set minimum height for the body */
+    overflow-x: hidden;
 }
 
 .body-container {
     margin: 30px;
+    margin-top: 100px;
+    flex: 1; /* Grow to fill remaining space */
 }
 
-.mascot-container {
+.body-container1 {
+    margin: 30px;
+    margin-top: 100px;
+    flex: 1;
+    /*overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 300px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    flex: 1;*/ /* Grow to fill remaining space */
+}
+
+.flex {
+    flex: 1;
+}
+
+.text-center {
+    margin-top: 50px;
+}
+
+.linky {
+    margin-bottom: 50px;
+}
+
+.mascot-container,
+.youtube-container,
+.video-containter {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     padding: 30px;
     border-radius: 10px;
+    text-align: center;
+    margin-top: 100px;
 }
 
-.mascot-container:hover {
-    transform: translateY(-4px);
-    cursor: pointer;
-}
+    .mascot-container:hover {
+        transform: translateY(-4px);
+        cursor: pointer;
+    }
+
+    iframe:hover {
+        transform: translateY(-4px);
+    }
 
 .pirata-one-regular {
     font-family: "Pirata One", system-ui;
@@ -33,7 +71,6 @@ body {
 
 .top-header {
     z-index: 999;
-    position: relative;
     color: #fff;
 }
 
@@ -49,6 +86,11 @@ body {
 
 .nav {
     padding: 30px;
+    background: none !important;
+}
+
+.navbar-toggler {
+    background-color: #fff;
 }
 
 a.nav-link {
@@ -60,7 +102,7 @@ a.nav-link {
 }
 
 .nav-link:hover {
-    text-decoration: underline !important;
+    color: black !important;
 }
 
 .bg-body-tertiary {
@@ -72,10 +114,10 @@ a.nav-link {
     border-color: deepskyblue;
 }
 
-.btn-primary:hover {
-    border-color: deepskyblue;
-    transform: translateY(-4px);
-}
+    .btn-primary:hover {
+        border-color: deepskyblue;
+        transform: translateY(-4px);
+    }
 
 .card {
     border: none !important;
@@ -104,7 +146,6 @@ a.nav-link {
 }
 
 .card-text {
-
 }
 
 .reviews {
@@ -112,7 +153,7 @@ a.nav-link {
 }
 
 .text-warning {
-    text-align:center;
+    text-align: center;
 }
 
 .d-flex {
@@ -129,5 +170,12 @@ a.nav-link {
     color: #fff;
     padding: 20px;
     text-align: center;
-    margin-top: 30px;
+}
+
+@media (max-width: 576px) {
+    .footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
 }
