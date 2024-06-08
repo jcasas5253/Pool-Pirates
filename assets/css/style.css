@@ -31,25 +31,27 @@ button {
     flex: 1;
 }
 
+.body-container1 {
+    margin: 30px;
+    flex: 1;
+}
+
 .flex {
     flex: 1;
 }
 
 .text-center {
-    margin-top: 50px;
+    text-align: center;
 }
 
 .linky {
     margin-bottom: 50px;
 }
 
-.w100 {
-    width: 60%;
-}
-
 .mascot-container,
 .youtube-container,
-.video-containter {
+.video-containter,
+.contact-title {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     padding: 30px;
     border-radius: 10px;
@@ -61,6 +63,11 @@ button {
         transform: translateY(-4px);
         cursor: pointer;
     }
+
+.contact-title {
+    margin-left: 25%;
+    margin-right: 25%;
+}
 
 iframe:hover {
     transform: translateY(-4px);
@@ -87,7 +94,7 @@ iframe:hover {
     overflow: hidden;
 }
 
-.navbar {
+.nav {
     padding: 30px;
     background: none !important;
 }
@@ -177,7 +184,11 @@ a.nav-link {
         bottom: 0;
     }
 
-    iframe {
-        width: 100% !important;
-    }
+iframe {
+    width: 100% !important;
+}
+.contact-title {
+    margin-left: 0;
+    margin-right: 0;
+}
 }
