@@ -213,4 +213,7 @@ iframe {
 .center-text {
     margin-top: 0;
 }
+.navbar {
+    padding: 10px;
+}
 }
