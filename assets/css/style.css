@@ -49,6 +49,11 @@ a {
     margin-bottom: 100px;
 }
 
+.center-text {
+    text-align: center;
+    margin-top: 100px;
+}
+
 .linky {
     margin-bottom: 50px;
 }
@@ -205,7 +210,8 @@ iframe {
     margin-left: 0;
     margin-right: 0;
 }
-.text-center {
+.text-center,
+.center-text {
     margin-top: 0;
 }
 }
