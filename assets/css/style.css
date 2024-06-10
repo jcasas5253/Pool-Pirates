@@ -10,7 +10,7 @@ body {
     overflow-x: hidden;
 }
 
-h1 {
+/*h1 {
     font-size: 2.5rem;
 }
 
@@ -24,6 +24,10 @@ p {
 
 button {
     font-size: 1rem !important;
+}*/
+
+a {
+    text-decoration: none;
 }
 
 .body-container {
@@ -42,6 +46,7 @@ button {
 
 .text-center {
     text-align: center;
+    margin-bottom: 100px;
 }
 
 .linky {
@@ -51,7 +56,8 @@ button {
 .mascot-container,
 .youtube-container,
 .video-containter,
-.contact-title {
+.contact-title,
+.text-center {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     padding: 30px;
     border-radius: 10px;
@@ -94,7 +100,7 @@ iframe:hover {
     overflow: hidden;
 }
 
-.nav {
+.navbar {
     padding: 30px;
     background: none !important;
 }
@@ -177,6 +183,10 @@ a.nav-link {
     text-align: center;
 }
 
+iframe {
+    width: 60%;
+}
+
 @media (max-width: 700px) {
     .footer {
         position: fixed;
@@ -190,5 +200,8 @@ iframe {
 .contact-title {
     margin-left: 0;
     margin-right: 0;
+}
+.text-center {
+    margin-top: 0;
 }
 }
